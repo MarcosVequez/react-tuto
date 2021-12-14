@@ -1,6 +1,8 @@
 import { Button, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import useStyles from '../counter-styles';
+import useStyles from './counter-styles';
+
+
 
 
 const Counter = () => {
