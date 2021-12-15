@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Counter from '../../components/counter/Counter';
@@ -6,13 +6,15 @@ import useStyles from './Products-styles';
 import ProductsService from '../../services/ProductsService';
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+
   const navigate = useNavigate();
   const classes = useStyles();
 
   useEffect(() => {
     const getAsyncProducts = async () => {
       const result = await ProductsService.getProducts();
-      console.log(result.data);
+      setProducts(result.data);
     };
 
     getAsyncProducts();
@@ -21,6 +23,8 @@ const Products = () => {
   const onClickButton = () => {
     navigate('details');
   };
+
+  console.log(products);
 
   return (
     <div className={classes.container}>
