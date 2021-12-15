@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Button, LinearProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Counter from '../../components/counter/Counter';
 import useStyles from './Products-styles';
 import ProductsService from '../../services/ProductsService';
+import ProductItem from '../../components/product-item/ProductItem';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -38,7 +38,7 @@ const Products = () => {
         <Typography variant="h2">Página de productos</Typography>
       </div>
       <div className={classes.counterContainer}>
-        <Counter />
+        <ProductItem product={products[0]} />
       </div>
       <Button onClick={onClickButton}>Ve a la página de detalles</Button>
     </div>
