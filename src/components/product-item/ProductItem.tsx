@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => {
     const navigate = useNavigate();
 
     const onClickItem = () => {
-        navigate('details');
+        navigate('details', { state: product });
     };
 
     return (
