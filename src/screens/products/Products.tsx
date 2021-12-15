@@ -37,8 +37,10 @@ const Products = () => {
       <div className={classes.header}>
         <Typography variant="h2">Página de productos</Typography>
       </div>
-      <div className={classes.counterContainer}>
-        <ProductItem product={products[0]} />
+      <div className={classes.productsContainer}>
+        {products.map((item) => {
+          return <ProductItem product={item} />;
+        })}
       </div>
       <Button onClick={onClickButton}>Ve a la página de detalles</Button>
     </div>
