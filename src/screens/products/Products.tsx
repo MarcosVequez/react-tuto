@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Button } from '@mui/material';
+import { Typography, Button, LinearProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Counter from '../../components/counter/Counter';
 import useStyles from './Products-styles';
@@ -24,7 +24,13 @@ const Products = () => {
     navigate('details');
   };
 
-  console.log(products);
+  if (products.length === 0) {
+    return (
+      <div className={classes.loaderContainer}>
+        <LinearProgress className={classes.loader} />
+      </div>
+    );
+  }
 
   return (
     <div className={classes.container}>

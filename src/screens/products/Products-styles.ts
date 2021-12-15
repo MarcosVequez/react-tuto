@@ -15,6 +15,17 @@ const useStyles: any = makeStyles({
     counterContainer: {
         width: '300px',
         margin: '4rem 0px'
+    },
+    loaderContainer: {
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+    },
+    loader: {
+        width: '30vw'
     }
 });
 
