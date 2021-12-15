@@ -3,6 +3,7 @@ import theme from '../../theme';
 
 const useStyles: any = makeStyles({
     container: {
+        cursor: 'pointer',
         position: 'relative',
         width: '300px',
         background: '#fff',

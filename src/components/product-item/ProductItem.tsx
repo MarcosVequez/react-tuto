@@ -1,12 +1,18 @@
 import React from 'react';
 import useStyles from './product-item-styles';
 import { Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 const ProductItem = ({ product }) => {
     const classes = useStyles();
+    const navigate = useNavigate();
+
+    const onClickItem = () => {
+        navigate('details');
+    };
 
     return (
-        <div className={classes.container}>
+        <div onClick={onClickItem} className={classes.container}>
             <div className={classes.imageContainer}>
                 <img className={classes.image} src={product.image}></img>
             </div>
